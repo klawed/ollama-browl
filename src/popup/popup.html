@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 14px;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .logo {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 8px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    
+    .title {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0;
+    }
+    
+    .subtitle {
+      color: #666;
+      font-size: 12px;
+      margin: 4px 0 0 0;
+    }
+    
+    .status {
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+    
+    .status.connected {
+      background: #e8f5e8;
+      color: #2e7d2e;
+    }
+    
+    .status.disconnected {
+      background: #ffeaea;
+      color: #d63031;
+    }
+    
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    
+    .connected .status-dot {
+      background: #00b894;
+    }
+    
+    .disconnected .status-dot {
+      background: #d63031;
+    }
+    
+    .section {
+      margin-bottom: 16px;
+    }
+    
+    .section-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: #666;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+      font-size: 12px;
+    }
+    
+    .info-label {
+      color: #666;
+    }
+    
+    .info-value {
+      font-family: monospace;
+      color: #333;
+    }
+    
+    .button {
+      width: 100%;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      background: #667eea;
+      color: white;
+      font-size: 12px;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+    
+    .button:hover {
+      background: #5a6fd8;
+    }
+    
+    .button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .example {
+      background: #f8f9fa;
+      border-radius: 4px;
+      padding: 8px;
+      font-family: monospace;
+      font-size: 11px;
+      color: #666;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">OB</div>
+    <h1 class="title">Ollama Browser Tool</h1>
+    <p class="subtitle">Browser automation for AI agents</p>
+  </div>
+
+  <div id="status" class="status disconnected">
+    <div class="status-dot"></div>
+    <span id="status-text">Connecting to bridge server...</span>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Connection</div>
+    <div class="info-item">
+      <span class="info-label">Bridge URL:</span>
+      <span class="info-value" id="bridge-url">ws://localhost:6790</span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">HTTP Port:</span>
+      <span class="info-value">6789</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Actions</div>
+    <button class="button" id="reconnect-btn">Reconnect</button>
+    <button class="button" id="test-btn">Test Connection</button>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Quick Start</div>
+    <div class="example">
+Python example:
+import requests
+
+response = requests.post(
+  'http://localhost:6789/execute',
+  json={'action': 'read', 'selector': '#my-input'}
+)
+print(response.json())
+    </div>
+  </div>
+</body>
+<script src="popup.js"></script>
+</html>
