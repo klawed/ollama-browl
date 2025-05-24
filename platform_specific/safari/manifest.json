@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+  "name": "Ollama Browser Tool",
+  "version": "1.0.0",
+  "description": "Browser automation tool for Ollama AI agents",
+  
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "<all_urls>",
+    "storage"
+  ],
+  
+  "background": {
+    "scripts": ["background/main.js"],
+    "persistent": false
+  },
+  
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content_scripts/interactor.js"],
+    "run_at": "document_end"
+  }],
+  
+  "browser_action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Ollama Browser Tool",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  
+  "web_accessible_resources": ["lib/utils.js"]
+}

@@ -1,0 +1,66 @@
+{
+  "extensionName": {
+    "message": "Ollama Browser Tool",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "Browser automation tool for Ollama AI agents",
+    "description": "Description of the extension"
+  },
+  "connectionStatus": {
+    "message": "Connection Status",
+    "description": "Label for connection status"
+  },
+  "connected": {
+    "message": "Connected",
+    "description": "Connected status message"
+  },
+  "disconnected": {
+    "message": "Disconnected",
+    "description": "Disconnected status message"
+  },
+  "reconnect": {
+    "message": "Reconnect",
+    "description": "Reconnect button text"
+  },
+  "testConnection": {
+    "message": "Test Connection",
+    "description": "Test connection button text"
+  },
+  "bridgeServerUrl": {
+    "message": "Bridge Server URL",
+    "description": "Label for bridge server URL"
+  },
+  "errorElementNotFound": {
+    "message": "Element not found: $SELECTOR$",
+    "description": "Error message when element is not found",
+    "placeholders": {
+      "selector": {
+        "content": "$1",
+        "example": "#my-button"
+      }
+    }
+  },
+  "errorInvalidSelector": {
+    "message": "Invalid CSS selector: $SELECTOR$",
+    "description": "Error message for invalid CSS selector",
+    "placeholders": {
+      "selector": {
+        "content": "$1",
+        "example": "#my-button"
+      }
+    }
+  },
+  "actionRead": {
+    "message": "Read",
+    "description": "Read action name"
+  },
+  "actionWrite": {
+    "message": "Write",
+    "description": "Write action name"
+  },
+  "actionClick": {
+    "message": "Click",
+    "description": "Click action name"
+  }
+}
